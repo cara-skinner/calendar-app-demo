@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header id="calendar-header">
+      <button id="prev-btn" aria-label="Previous month">&#8249;</button>
+      <h1 id="month-heading"></h1>
+      <button id="next-btn" aria-label="Next month">&#8250;</button>
+    </header>
+    <div id="calendar-grid"></div>
+  </div>
+
+  <div id="modal-overlay" class="hidden">
+    <div id="modal">
+      <button id="modal-close">✕</button>
+      <h2 id="modal-title">Add Event</h2>
+      <form id="event-form">
+        <label for="field-title">
+          <span>Title</span>
+          <input id="field-title" type="text" required>
+        </label>
+        <label for="field-start-date">
+          <span>Start Date</span>
+          <input id="field-start-date" type="date" required>
+        </label>
+        <label for="field-start-time">
+          <span>Start Time</span>
+          <input id="field-start-time" type="time">
+        </label>
+        <label for="field-end-date">
+          <span>End Date</span>
+          <input id="field-end-date" type="date" required>
+        </label>
+        <label for="field-end-time">
+          <span>End Time</span>
+          <input id="field-end-time" type="time">
+        </label>
+        <label for="field-desc">
+          <span>Description</span>
+          <textarea id="field-desc"></textarea>
+        </label>
+        <label for="field-color">
+          <span>Color</span>
+          <select id="field-color">
+            <option value="#4f46e5">Indigo</option>
+            <option value="#dc2626">Rose</option>
+            <option value="#059669">Emerald</option>
+            <option value="#f59e0b">Amber</option>
+            <option value="#7c3aed">Violet</option>
+          </select>
+        </label>
+        <div id="form-errors"></div>
+        <button type="submit" id="save-btn">Save</button>
+        <button type="button" id="delete-btn" class="hidden">Delete</button>
+      </form>
+    </div>
+  </div>
+
+  <script defer src="app.js"></script>
+</body>
+</html>
